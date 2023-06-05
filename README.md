@@ -1,2 +1,1 @@
-Cocktail DB
-A database of cocktails developed using React
+Cocktail DB is a database of cocktails developed using React
