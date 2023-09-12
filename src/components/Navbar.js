@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import logo from "../logo.svg";
+import logo from "../assets/images/logo.svg";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -19,9 +19,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <Link to="/">
+          <NavLink to="/">
             <img src={logo} alt="cocktail db logo" className="logo" />
-          </Link>
+          </NavLink>
           <button
             className="nav-toggle"
             onClick={() => {
@@ -34,10 +34,13 @@ const Navbar = () => {
         <div ref={linksContainerRef} className="links-container">
           <ul ref={linksRef} className="nav-links">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/newsletter">Newsletter</NavLink>
             </li>
           </ul>
         </div>

@@ -1,5 +1,3 @@
-import React from "react";
-
 const About = () => {
   return (
     <section className="section about-section">
@@ -10,7 +8,7 @@ const About = () => {
         aut voluptatum atque ducimus tenetur, excepturi numquam dolor molestias
         eum facere? Veritatis explicabo accusantium nesciunt minus. Ut velit
         iste blanditiis magni at numquam veniam voluptatem dicta quod
-        repellendus!{" "}
+        repellendus
       </p>
     </section>
   );

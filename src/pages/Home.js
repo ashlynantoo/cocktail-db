@@ -1,12 +1,20 @@
-import React from "react";
-import CocktailList from "../components/CocktailList";
-import SearchForm from "../components/SearchForm";
+import { Outlet, useNavigation } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+
   return (
     <main>
-      <SearchForm />
-      <CocktailList />
+      <Navbar />
+      {isLoading ? (
+        <section className="loading-window">
+          <div className="loading"></div>
+        </section>
+      ) : (
+        <Outlet />
+      )}
     </main>
   );
 };

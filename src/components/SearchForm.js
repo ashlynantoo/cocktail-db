@@ -1,35 +1,26 @@
-import React, { useEffect, useRef } from "react";
-import { useGlobalContext } from "../context";
+import { Form, useNavigation } from "react-router-dom";
 
-const SearchForm = () => {
-  const { setSearchCocktail } = useGlobalContext();
-  const searchValueContainer = useRef("");
-
-  useEffect(() => {
-    searchValueContainer.current.focus();
-  });
-
-  const findCocktail = () => {
-    setSearchCocktail(searchValueContainer.current.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+const SearchForm = ({ searchTerm }) => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
 
   return (
     <section className="section">
-      <form className="search-form" onSubmit={handleSubmit}>
+      <Form className="search-form">
         <div className="form-control">
-          <label htmlFor="cocktailName">search your favourite cocktail</label>
-          <input
-            type="text"
-            name="cocktailName"
-            ref={searchValueContainer}
-            onChange={findCocktail}
-          />
+          <label htmlFor="search">search your favorite cocktail</label>
+          <div className="search-area">
+            <input type="search" name="search" defaultValue={searchTerm} />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="btn search-btn"
+            >
+              {isSubmitting ? "Searching" : "Search"}
+            </button>
+          </div>
         </div>
-      </form>
+      </Form>
     </section>
   );
 };

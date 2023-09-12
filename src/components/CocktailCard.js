@@ -1,8 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Cocktail = (props) => {
   const { id, name, image, info, glass } = props;
+
   return (
     <article className="cocktail">
       <div className="img-container">
@@ -12,7 +12,7 @@ const Cocktail = (props) => {
         <h3>{name}</h3>
         <h4>{glass}</h4>
         <p>{info}</p>
-        <Link to={`/cocktail/${id}`} className="btn btn-primary">
+        <Link to={`/cocktail/${id}`} className="btn">
           Details
         </Link>
       </div>

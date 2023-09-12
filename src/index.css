@@ -4,25 +4,25 @@ Variables
 ======
 */
 :root {
-  --primaryLightColor: #d4e6a5;
-  --primaryColor: #476a2e;
-  --primaryDarkColor: #c02c03;
-  --mainWhite: #fff;
-  --offWhite: #f7f7f7;
-  --mainBackground: #f1f5f8;
-  --mainOverlay: rgba(35, 10, 36, 0.4);
-  --mainBlack: #222;
-  --mainGrey: #ececec;
-  --darkGrey: #afafaf;
-  --mainRed: #bd0303;
-  --mainTransition: all 0.3s linear;
-  --mainSpacing: 0.3rem;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  --mainBorderRadius: 0.25rem;
-  --smallWidth: 90vw;
-  --maxWidth: 40rem;
-  --fullWidth: 1170px;
+  --primary-light-color: #63804d;
+  --primary-color: #476a2e;
+  --primary-dark-color: #3c5a27;
+  --clr-white: #fff;
+  --clr-offWhite: #f7f7f7;
+  --background-color: #f1f5f8;
+  --overlay: rgba(35, 10, 36, 0.4);
+  --clr-black: #222;
+  --clr-light-grey: #ececec;
+  --clr-dark-grey: #afafaf;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --small-spacing: 0.1rem;
+  --light-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --dark-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --border-radius: 0.25rem;
+  --view-width: 90vw;
+  --full-width: 40rem;
+  --max-width: 1440px;
 }
 
 /* 
@@ -39,9 +39,9 @@ Global Styles
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: var(--mainBlack);
-  background: var(--mainBackground);
-  line-height: 1.4;
+  color: var(--clr-black);
+  background: var(--background-color);
+  line-height: 1.5;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -51,7 +51,7 @@ h2,
 h3,
 h4 {
   margin-bottom: 1.25rem;
-  letter-spacing: var(--mainSpacing);
+  letter-spacing: var(--spacing);
 }
 
 p {
@@ -64,7 +64,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--mainBlack);
+  color: var(--clr-black);
 }
 
 img {
@@ -78,9 +78,7 @@ Navbar
 ======
 */
 .navbar {
-  background: var(--mainWhite);
-  border-bottom: 2px solid var(--primaryColor);
-  box-shadow: var(--lightShadow);
+  background-color: var(--clr-white);
 }
 
 .nav-header {
@@ -96,10 +94,10 @@ Navbar
 
 .nav-toggle {
   font-size: 1.25rem;
-  color: var(--primaryColor);
-  background: transparent;
+  color: var(--primary-color);
+  background-color: transparent;
   border-color: transparent;
-  transition: var(--mainTransition);
+  transition: var(--transition);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -112,7 +110,7 @@ Navbar
 .links-container {
   height: 0;
   overflow: hidden;
-  transition: var(--mainTransition);
+  transition: var(--transition);
 }
 
 .nav-links a {
@@ -121,13 +119,13 @@ Navbar
   font-weight: 400;
   letter-spacing: 2px;
   font-size: 1rem;
-  padding: 0.3rem 1rem;
-  transition: var(--mainTransition);
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
-  color: var(--mainWhite);
-  background: var(--primaryColor);
+  color: var(--clr-white);
+  background-color: var(--primary-color);
   padding-left: 1.5rem;
 }
 
@@ -154,19 +152,69 @@ Navbar
 
   .nav-links {
     display: flex;
-    gap: 2rem;
   }
 
   .nav-links a {
-    padding: 0;
-    font-size: 1.1rem;
+    padding: 0.375rem 1rem;
+    font-size: 1rem;
     font-weight: 400;
   }
 
   .nav-links a:hover {
-    padding: 0;
-    color: var(--primaryLightColor);
-    background: transparent;
+    padding: 0.375rem 1rem;
+    color: var(--clr-white);
+    background-color: var(--primary-color);
+  }
+}
+
+/* 
+====== 
+Global Classes 
+======
+*/
+.section {
+  padding: 2.5rem 0;
+  padding-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  text-align: center;
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.btn {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--clr-white);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: var(--small-spacing);
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--clr-white);
+  color: var(--primary-color);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 4.5rem 0;
+    padding-bottom: 0;
   }
 }
 
@@ -175,46 +223,48 @@ Navbar
 Search Form
 ======
 */
-.section {
-  padding: 2.5rem 0;
-  padding-bottom: 0;
-}
-
 .search-form {
-  width: var(--smallWidth);
-  max-width: var(--maxWidth);
+  width: var(--view-width);
+  max-width: var(--full-width);
   margin: 0 auto;
-  background: var(--mainWhite);
+  background: var(--clr-white);
   padding: 1rem;
   text-transform: capitalize;
-  border-radius: var(--mainBorderRadius);
-  box-shadow: var(--lightShadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--light-shadow);
 }
 
 .form-control label {
   display: block;
   margin-bottom: 1.25rem;
   font-weight: bold;
-  letter-spacing: 0.25rem;
-  color: var(--primaryColor);
+  letter-spacing: var(--spacing);
+  color: var(--primary-color);
+}
+
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-control input {
   width: 100%;
-  border: none;
-  border-color: transparent;
-  background: var(--mainBackground);
-  border-radius: var(--mainBorderRadius);
+  border: 1px solid var(--clr-dark-grey);
+  background-color: var(--background-color);
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: var(--small-spacing);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.search-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 @media screen and (min-width: 768px) {
-  .section {
-    padding: 4.5rem 0;
-    padding-bottom: 0;
-  }
-
   .search-form {
     padding: 2rem;
   }
@@ -225,61 +275,50 @@ Search Form
 Cocktail List 
 ======
 */
-.section-title {
-  font-size: 1.75rem;
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-  text-align: center;
-  width: var(--smallWidth);
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  padding-bottom: 2rem;
-}
-
 .cocktails-center {
-  width: var(--smallWidth);
-  max-width: var(--fullWidth);
+  width: var(--view-width);
+  max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
   gap: 2rem;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
   .cocktails-center {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .section-title {
-    padding-bottom: 3rem;
+@media screen and (min-width: 1200px) {
+  .cocktails-center {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 /* 
 ====== 
-Cocktail 
+Cocktail Card
 ======
 */
 .cocktail {
-  background: var(--mainWhite);
+  background: var(--clr-white);
   margin-bottom: 1rem;
-  border-radius: var(--mainBorderRadius);
-  box-shadow: var(--lightShadow);
-  transition: var(--mainTransition);
+  border-radius: var(--border-radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 .cocktail:hover {
-  box-shadow: var(--darkShadow);
+  box-shadow: var(--dark-shadow);
 }
 
 .cocktail img {
-  height: 20rem;
+  height: 18rem;
   object-fit: cover;
-  border-top-left-radius: var(--mainBorderRadius);
-  border-top-right-radius: var(--mainBorderRadius);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .cocktail-footer {
@@ -289,39 +328,21 @@ Cocktail
 .cocktail-footer h3,
 .cocktail-footer h4,
 .cocktail-footer p {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
 .cocktail-footer h3 {
   font-size: 1.75rem;
 }
 
+.cocktail-footer h4 {
+  letter-spacing: var(--small-spacing);
+}
+
 .cocktail-footer p {
   color: grey;
+  font-weight: 400;
   margin-bottom: 0.5rem;
-}
-
-.btn,
-.btn-primary {
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  padding: 0.45rem 0.8rem;
-  display: inline-block;
-  transition: var(--mainTransition);
-  cursor: pointer;
-  font-size: 0.8rem;
-  border-radius: var(--mainBorderRadius);
-}
-
-.btn-primary {
-  background: var(--primaryColor);
-  color: var(--mainWhite);
-  border-color: transparent;
-}
-
-.btn-primary:hover {
-  background: var(--primaryLightColor);
-  color: var(--primaryColor);
 }
 
 /* 
@@ -334,8 +355,8 @@ Single Cocktail
 }
 
 .drink {
-  width: var(--smallWidth);
-  max-width: var(--fullWidth);
+  width: var(--view-width);
+  max-width: var(--max-width);
   display: grid;
   align-items: center;
   margin: 0 auto;
@@ -343,7 +364,7 @@ Single Cocktail
 }
 
 .drink img {
-  border-radius: var(--mainBorderRadius);
+  border-radius: var(--border-radius);
 }
 
 .drink-info {
@@ -351,9 +372,9 @@ Single Cocktail
 }
 
 .drink p {
-  font-weight: bold;
+  font-weight: 400;
   text-transform: capitalize;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .drink-info :last-child {
@@ -365,10 +386,10 @@ Single Cocktail
 }
 
 .drink-data {
-  background: var(--primaryLightColor);
+  background: var(--primary-color);
+  color: var(--clr-white);
   padding: 0.25rem 0.5rem;
-  border-radius: var(--mainBorderRadius);
-  color: var(--primaryColor);
+  border-radius: var(--border-radius);
 }
 
 .home-btn {
@@ -392,26 +413,45 @@ About
 ======
 */
 .about-section {
-  width: var(--smallWidth);
-  max-width: var(--maxWidth);
+  width: var(--view-width);
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .about-section p {
   line-height: 2rem;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: var(--small-spacing);
   text-align: justify;
 }
 
 /* 
 ====== 
-Error
+Error, SinglePageError
 ======
 */
+.error-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .error-container {
   text-align: center;
   text-transform: capitalize;
+  width: var(--view-width);
+  margin: 0 auto;
+}
+
+.notFoundImg {
+  width: 15rem;
+  margin: 0 auto;
+}
+
+.error-container p {
+  font-weight: 400;
+  letter-spacing: var(--small-spacing);
 }
 
 /* 
@@ -419,74 +459,73 @@ Error
 Loading
 ======
 */
-.loader {
-  margin-top: 3rem;
-  height: 7rem;
+.loading-window {
+  height: 50vh;
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: end;
-  gap: 0.75rem;
+  align-items: center;
 }
 
-.box1,
-.box2,
-.box3,
-.box4 {
-  background: var(--primaryColor);
-  display: inline-block;
-  width: 2rem;
-}
-
-.box1 {
-  animation: load1 1s linear infinite;
-}
-
-.box2 {
-  animation: load2 1s linear infinite;
-}
-.box3 {
-  animation: load3 1s linear infinite;
-}
-.box4 {
-  animation: load4 1s linear infinite;
-}
-
-@keyframes load1 {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 1rem;
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@keyframes load2 {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 3rem;
-  }
+.loading {
+  width: 5rem;
+  height: 5rem;
+  border: 7px solid var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spinner 0.7s linear infinite;
 }
 
-@keyframes load3 {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 5rem;
-  }
+/* 
+====== 
+Newsletter
+======
+*/
+.form {
+  width: var(--view-width);
+  max-width: var(--full-width);
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--light-shadow);
+  padding: 2.5rem;
+  margin: 3rem auto;
 }
 
-@keyframes load4 {
-  0% {
-    height: 0;
-  }
+.form h4 {
+  text-align: center;
+}
 
-  100% {
-    height: 7rem;
-  }
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--small-spacing);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  border: 1px solid var(--clr-light-grey);
+  font-size: 0.9rem;
+  letter-spacing: var(--small-spacing);
+}
+
+.last-input {
+  margin-bottom: 1rem;
 }
