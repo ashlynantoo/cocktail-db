@@ -1,8 +1,13 @@
 ## Cocktails
 
-(Cocktails)[https://ashlynz-cocktails-db.netlify.app]
+An application for searching cocktails developed using react, react router, and react query.
 
-#### Install and Setup
+Demo - [Cocktails](https://ashlynz-cocktails-db.netlify.app)
 
-npm install
-npm start
+#### Steps
+
+```sh
+npm install && npm start
+```
+
+- visit url http://localhost:3000
